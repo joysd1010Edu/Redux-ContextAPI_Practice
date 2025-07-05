@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const CounterSlice= createSlice({
     initialState:{count:0, name:"JoySd", inputValue: ""},
-    name:"counter",
+    name:"Counter",
    reducers: {
         increment: (state, action) => {
             // If payload is provided, use it; otherwise default to 1

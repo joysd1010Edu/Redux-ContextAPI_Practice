@@ -1,8 +1,22 @@
-import { create } from 'zustand'
+import { create } from "zustand";
+import { devtools } from "zustand/middleware";
 
-const useStore = create((set) => ({
-  bears: 0,
-  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
-  updateBears: (newBears) => set({ bears: newBears }),
-}))
+const counterStore = (set) => ({
+  count: 0,
+  name: "JoySd",
+  inputValue: "",
+  increment: (value = 1) =>
+    set((state) => ({
+      count: state.count + Number(value),
+    })),
+  decrement: (value = 1) =>
+    set((state) => ({
+      count: state.count - Number(value),
+    })),
+  reset: () => set({ count: 0 }),
+  setCount: (value) => set({ count: Number(value) }),
+  setInputValue: (value) => set({ inputValue: value }),
+});
+
+const useCounterStore = create(devtools(counterStore, { name: "CounterStore" }));
+export default useCounterStore;

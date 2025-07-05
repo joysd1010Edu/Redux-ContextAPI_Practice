@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Count from './Counter-Context/Count'
 import RE_counter from './Counter-Redux/RE_counter'
+import Zustand_Counter from './ZustandCounter/Zustand_Counter'
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
          <Count />
       ==============================
       <RE_counter/>
+      ==============================
+      <Zustand_Counter/>
       </div>
      
     </div>
